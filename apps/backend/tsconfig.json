@@ -13,6 +13,7 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
+    "outDir": "dist",
     "lib": ["dom", "ESNext"],
     "module": "NodeNext",
     "target": "ESNext"

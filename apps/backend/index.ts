@@ -19,16 +19,14 @@ app.get("/todo/:id", async (req, res) => {
 
     // Check if a todo item with the given ID exists
     if (todo.length === 0) {
-      res.statusCode = 404;
-      res.json({ message: "Todo not found" });
+      res.status(404).json({ message: "Todo not found" });
     } else {
       // Respond with the fetched todo
       res.json(todo[0]);
     }
   } catch (error) {
     console.error("Error fetching todo:", error);
-    res.statusCode = 500;
-    res.json({ message: "Error fetching todo" });
+    res.status(500).json({ message: "Error fetching todo" });
   }
 });
 
@@ -41,8 +39,7 @@ app.get("/todo", async (req, res) => {
     res.json({ todos });
   } catch (error) {
     console.error("Error fetching todos:", error);
-    res.statusCode = 500;
-    res.json({ message: "Error fetching todos" });
+    res.status(500).json({ message: "Error fetching todos" });
   }
 });
 
@@ -51,8 +48,7 @@ app.post("/todo", async (req, res) => {
 
   // Input validation: Check if the title is provided
   if (!body.title) {
-    res.statusCode = 400;
-    res.json({ message: "Title is required" });
+    res.status(400).json({ message: "Title is required" });
   }
 
   try {
@@ -72,8 +68,7 @@ app.post("/todo", async (req, res) => {
     });
   } catch (error) {
     console.error("Error inserting todo:", error);
-    res.statusCode = 500;
-    res.json({ message: "Error creating todo" });
+    res.status(500).json({ message: "Error creating todo" });
   }
 });
 
@@ -83,16 +78,16 @@ app.put("/todo/:id", async (req, res) => {
 
   // Input validation: Ensure at least one field is provided
   if (title === undefined && done === undefined) {
-    res.statusCode = 400;
-    return res.json({ message: "Either title or done status is required" });
+    return res
+      .status(400)
+      .json({ message: "Either title or done status is required" });
   }
 
   try {
     // Check if the todo with the given ID exists
     const existingTodo = await sql`SELECT * FROM tasks WHERE id = ${id}`;
     if (existingTodo.length === 0) {
-      res.statusCode = 404;
-      return res.json({ message: "Todo not found" });
+      return res.status(404).json({ message: "Todo not found" });
     }
 
     // Build the update query manually
@@ -125,8 +120,7 @@ app.put("/todo/:id", async (req, res) => {
     });
   } catch (error) {
     console.error("Error updating todo:", error);
-    res.statusCode = 500;
-    res.json({ message: "Error updating todo" });
+    res.status(500).json({ message: "Error updating todo" });
   }
 });
 
@@ -137,8 +131,7 @@ app.delete("/todo/:id", async (req, res) => {
     // Check if the todo with the given ID exists
     const existingTodo = await sql`SELECT * FROM tasks WHERE id = ${id}`;
     if (existingTodo.length === 0) {
-      res.statusCode = 404;
-      res.json({ message: "Todo not found" });
+      res.status(404).json({ message: "Todo not found" });
       return;
     }
 
@@ -149,8 +142,7 @@ app.delete("/todo/:id", async (req, res) => {
     res.json({ message: "Todo deleted successfully!" });
   } catch (error) {
     console.error("Error deleting todo:", error);
-    res.statusCode = 500;
-    res.json({ message: "Error deleting todo" });
+    res.status(500).json({ message: "Error deleting todo" });
   }
 });
 

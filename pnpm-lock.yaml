@@ -14,8 +14,8 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
       pathless:
-        specifier: ^0.0.4
-        version: 0.0.4
+        specifier: ^0.0.5
+        version: 0.0.5
       postgres:
         specifier: ^3.4.4
         version: 3.4.4
@@ -1242,8 +1242,8 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
-  pathless@0.0.4:
-    resolution: {integrity: sha512-cCCtOmKB9Zhu6I2F5SuwffadJwLJ0Z1beJ+UV6Hlk5mFurV/zUSH2YJqTkKAacIrcKyJhAJxjwiBLbm0ur+fEQ==}
+  pathless@0.0.5:
+    resolution: {integrity: sha512-4zDinAqgSJ2bc1zic+rqTc3uAbujqNABxPvdBdWPCNcsPno3ZizagAnEiom03zejKKMgn5UX4Sl0cSB1Kc46GQ==}
 
   picocolors@1.1.0:
     resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
@@ -2620,7 +2620,7 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.2
 
-  pathless@0.0.4: {}
+  pathless@0.0.5: {}
 
   picocolors@1.1.0: {}
 

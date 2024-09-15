@@ -1,8 +1,10 @@
 {
   "name": "backend",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "node .",
     "dev": "tsx watch index.ts",
+    "build": "tsc",
     "migrate": "tsx migrate.ts"
   },
   "devDependencies": {
@@ -12,7 +14,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "pathless": "^0.0.4",
+    "pathless": "^0.0.5",
     "postgres": "^3.4.4"
   }
 }
