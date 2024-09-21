@@ -1,8 +1,8 @@
-import { createApp } from "pathless";
+import pathless from "pathless";
 import { cors } from "pathless/middleware";
 import sql from "./db";
 
-const app = createApp();
+const app = pathless();
 
 app.use(cors());
 

@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "pathless": "^0.0.5",
+    "pathless": "^0.2.0",
     "postgres": "^3.4.4"
   }
 }
